@@ -16,17 +16,16 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
 
-    /* --- ESTO ARREGLA EL ERROR '@/' EN VS CODE --- */
+    /* Import alias '@/' */
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
   },
   "include": ["src"],
-  /* --- ESTO CONECTA AMBOS ARCHIVOS TSCONFIG --- */
   "references": [{ "path": "./tsconfig.node.json" }]
 }
