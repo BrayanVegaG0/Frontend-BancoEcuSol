@@ -39,7 +39,7 @@ const AppRouter = () => {
           <Route path="cuentas" element={<PaginaCuentas />} />
         </Route>
         
-        <Route path="*" element={<div>404 - Página no encontrada</div>} />
+        <Route path="*" element={<div>EN PROCESO</div>} />
       </Routes>
     </Suspense>
   );

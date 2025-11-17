@@ -1,3 +1,3 @@
-export const MODO_BACKEND = false;
+export const MODO_BACKEND = true;
 
-export const API_URL = 'https://api.ecusol.com/v1';
+export const API_URL = 'http://localhost:8081';

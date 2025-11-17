@@ -4,7 +4,6 @@ import { Mail, MapPin, Phone, Twitter, Linkedin, Facebook } from 'lucide-react';
 export const FooterApp = () => {
   return (
       <footer className="bg-ecusol-gris-oscuro text-gray-300 pt-16 pb-8">      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Col 1: Logo y Redes */}
         <div>
           <LogoEcuSol className="text-3xl !text-white" />
           <p className="text-sm mt-2">El mejor banco a tu alcance.</p>
@@ -14,33 +13,22 @@ export const FooterApp = () => {
             <a href="#" className="hover:text-white"><Facebook size={20} /></a>
           </div>
         </div>
-
-        {/* Col 2: Links Rápidos */}
         <div>
           <h5 className="font-bold text-white mb-4">Links Rápidos</h5>
           <ul className="space-y-2 text-sm">
             <li><a href="/app/dashboard" className="hover:text-white">Principal</a></li>
-            <li><a href="/app/cuentas" className="hover:text-white">Cuentas</a></li>
             <li><a href="/app/transferir" className="hover:text-white">Transferir</a></li>
-            <li><a href="/app/pagar-servicios" className="hover:text-white">Pagos</a></li>
             <li><a href="/app/acerca-de" className="hover:text-white">Acerca de</a></li>
             <li><a href="/app/ayuda" className="hover:text-white">Ayuda</a></li>
           </ul>
         </div>
 
-        {/* Col 3: Servicios de Banco */}
         <div>
           <h5 className="font-bold text-white mb-4">Servicios de Banco</h5>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-white">Ver Estado Cuenta</a></li>
-            <li><a href="/app/pagar-servicios" className="hover:text-white">Pagar Servicios</a></li>
             <li><a href="/app/transferir" className="hover:text-white">Transferir Dinero</a></li>
-            <li><a href="#" className="hover:text-white">Movimientos Recientes</a></li>
-            <li><a href="#" className="hover:text-white">Perfil de Usuario</a></li>
           </ul>
         </div>
-
-        {/* Col 4: Contacto */}
         <div>
           <h5 className="font-bold text-white mb-4">Contacto Para Créditos</h5>
           <ul className="space-y-3 text-sm">
@@ -65,7 +53,7 @@ export const FooterApp = () => {
         <div className="flex justify-center space-x-4 mt-2">
           <a href="#" className="hover:text-white">Política de Privacidad</a>
           <a href="#" className="hover:text-white">Términos del Servicio</a>
-          <a href="#" className="hover:text-white">Política Cooky</a>
+          <a href="#" className="hover:text-white">Política Cookie</a>
         </div>
       </div>
     </footer>

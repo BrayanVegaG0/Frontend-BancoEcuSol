@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { LogoEcuSol } from '@/components/common/LogoEcuSol';
 import useAuth from '@/hooks/useAuth';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Boton } from '../common/Boton';
+import { Boton } from '@/components/common/Boton';
 import { User, Menu, X } from 'lucide-react';
 
-// 3. ELIMINADO EL ENLACE 'Pagos' DEL ARRAY
 const enlaces = [
   { nombre: 'Principal', ruta: '/app/dashboard' },
   { nombre: 'Cuentas', ruta: '/app/cuentas' },
@@ -27,9 +26,9 @@ export const HeaderApp: React.FC = () => {
   return (
     <header className="bg-ecusol-primario text-gray-200 w-full relative">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <LogoEcuSol size={180} />
         
-        {/* Links de Desktop (Ocultos en móvil) */}
+        <LogoEcuSol size={60} />
+        
         <div className="hidden md:flex items-center space-x-6">
           {enlaces.map((enlace) => (
             <NavLink
@@ -44,11 +43,10 @@ export const HeaderApp: React.FC = () => {
           ))}
         </div>
         
-        {/* Info de Usuario (Oculta en móvil) */}
         <div className="hidden md:flex items-center space-x-4">
           <span className="text-gray-200 flex items-center gap-2">
             <User size={18} className="text-ecusol-secundario" />
-            Bienvenid@{usuario ? `, ${usuario.nombres.split(' ')[0]}` : ''}
+            Bienvenid@{usuario ? `, ${usuario.nombreUsuario.split(' ')[0]}` : ''}
           </span>
           
           <Boton 
@@ -61,7 +59,6 @@ export const HeaderApp: React.FC = () => {
           </Boton>
         </div>
 
-        {/* Botón de Menú Móvil (Solo visible en móvil) */}
         <div className="md:hidden">
           <button onClick={() => setMenuAbierto(!menuAbierto)} className="text-white">
             {menuAbierto ? <X size={28} /> : <Menu size={28} />}
@@ -69,7 +66,6 @@ export const HeaderApp: React.FC = () => {
         </div>
       </nav>
 
-      {/* --- Menú Desplegable Móvil --- */}
       <div 
         className={`md:hidden absolute top-full left-0 w-full bg-white text-ecusol-gris-oscuro shadow-lg z-20 transition-all duration-300 ease-in-out ${menuAbierto ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
       >
@@ -90,7 +86,7 @@ export const HeaderApp: React.FC = () => {
           <div className="flex flex-col space-y-4">
             <span className="text-gray-700 flex items-center gap-2">
               <User size={18} className="text-ecusol-primario" />
-              Bienvenid@{usuario ? `, ${usuario.nombres.split(' ')[0]}` : ''}
+              Bienvenid@{usuario ? `, ${usuario.nombreUsuario.split(' ')[0]}` : ''}
             </span>
             <Boton onClick={handleLogout} variante="secundario" tamano="mediano" className="w-full">
               Salir
@@ -101,3 +97,5 @@ export const HeaderApp: React.FC = () => {
     </header>
   );
 };
+
+export default HeaderApp;

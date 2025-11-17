@@ -1,15 +1,13 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { Usuario } from '@/types';
 import { authService } from '@/services/authService';
+import { UsuarioAutenticado } from '@/types';
 
 interface AuthState {
   isAutenticado: boolean;
-  usuario: Usuario | null;
-  token: string | null;
+  usuario: UsuarioAutenticado | null;
   login: (usuario: string, contrasena: string) => Promise<void>;
   logout: () => void;
-  registrar: (usuario: string, contrasena: string, nombres: string) => Promise<void>;
 }
 
 export const useAuthStore = create<AuthState>()(
@@ -17,46 +15,21 @@ export const useAuthStore = create<AuthState>()(
     (set) => ({
       isAutenticado: false,
       usuario: null,
-      token: null,
 
       login: async (username, password) => {
-        try {
-          const usuarioLogueado = await authService.login(username, password);
-          const tokenSimulado = 'jwt-token-simulado-12345';
-          
-          set({ 
-            isAutenticado: true, 
-            usuario: usuarioLogueado, 
-            token: tokenSimulado 
-          });
-        } catch (error) {
-          console.error("Error en login store:", error);
-          throw error;
-        }
+        const usuarioLogueado = await authService.login(username, password);
+        set({ 
+          isAutenticado: true, 
+          usuario: usuarioLogueado
+        });
       },
 
       logout: () => {
-        set({ isAutenticado: false, usuario: null, token: null });
-      },
-
-      registrar: async (username, password, nombres) => {
-        try {
-          const usuarioRegistrado = await authService.registrar(username, password, nombres);
-          const tokenSimulado = 'jwt-token-simulado-54321';
-          
-          set({
-            isAutenticado: true,
-            usuario: usuarioRegistrado,
-            token: tokenSimulado
-          });
-        } catch (error) {
-           console.error("Error en registro store:", error);
-           throw error;
-        }
+        set({ isAutenticado: false, usuario: null });
       },
     }),
     {
-      name: 'ecusol-auth-storage', // nombre para localStorage
+      name: 'ecusol-auth-storage',
     }
   )
 );

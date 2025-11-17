@@ -1,20 +1,32 @@
-export interface Usuario {
-  id: string;
-  nombres: string;
-  email: string;
+export interface UsuarioAutenticado {
+  usuarioWebId: number;
+  clienteId: number;
+  nombreUsuario: string;
+  emailContacto: string;
+  ultimoAcceso: string;
 }
 
 export interface Cuenta {
-  id: string;
-  tipo: string;
-  numeroCorto: string; 
-  saldo: number;
+  cuentaId: number;
+  numeroCuenta: string;
+  tipoCuenta: string;
+  saldoDisponible: number;
+  saldoContable: number;
+  estado: string;
 }
 
 export interface Movimiento {
-  id: string;
   fecha: string;
+  tipoTransaccion: string;
+  monto: number;
   descripcion: string;
-  monto: number; 
-  categoria: string;
+  saldoPosterior: number;
+  canal: string;
+}
+
+export interface TransferenciaResponse {
+  codigoTransaccion: string;
+  fecha: string;
+  saldoDisponibleOrigen: number;
+  saldoDisponibleDestino: number;
 }
