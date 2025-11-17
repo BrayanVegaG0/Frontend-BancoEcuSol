@@ -22,7 +22,6 @@ export const useAuthStore = create<AuthState>()(
       login: async (username, password) => {
         try {
           const usuarioLogueado = await authService.login(username, password);
-          // En un login real, la API devolvería un token
           const tokenSimulado = 'jwt-token-simulado-12345';
           
           set({ 
@@ -42,7 +41,6 @@ export const useAuthStore = create<AuthState>()(
 
       registrar: async (username, password, nombres) => {
         try {
-          // En un registro real, pasaríamos todos los datos del formulario
           const usuarioRegistrado = await authService.registrar(username, password, nombres);
           const tokenSimulado = 'jwt-token-simulado-54321';
           

@@ -17,16 +17,12 @@ const PaginaAcercaDe = () => {
         <p className="text-lg text-gray-600 text-center mb-16">
           Conoce al Banco Número 1 en el Ecuador y a nuestras estadísticas.
         </p>
-
-        {/* Sección de Estadísticas */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
           <StatItem valor="2.5M+" etiqueta="Usuarios Activos" />
           <StatItem valor="$500M+" etiqueta="Transacciones Diarias" />
           <StatItem valor="4.8/5" etiqueta="Ranking en la Play Store" />
           <StatItem valor="24/7" etiqueta="Soporte a Usuario" />
         </div>
-
-        {/* Sección de Contacto */}
         <Tarjeta className="max-w-4xl mx-auto bg-ecusol-gris-claro">
           <h2 className="text-3xl font-bold text-center mb-4">CONTACTO DIRECTO</h2>
           <p className="text-center text-gray-600 mb-12">
@@ -34,14 +30,12 @@ const PaginaAcercaDe = () => {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {/* Llamada */}
             <div>
               <Phone size={36} className="mx-auto text-ecusol-azul mb-3" />
               <h4 className="font-semibold text-lg mb-2">Llámanos</h4>
               <p className="text-gray-700">0995161310</p>
               <p className="text-gray-700">0995161210</p>
             </div>
-            {/* Email */}
             <div>
               <Mail size={36} className="mx-auto text-ecusol-azul mb-3" />
               <h4 className="font-semibold text-lg mb-2">Envíanos un correo</h4>
@@ -50,7 +44,6 @@ const PaginaAcercaDe = () => {
                 Direccionar
               </Boton>
             </div>
-            {/* Chatbot */}
             <div>
               <MessageCircle size={36} className="mx-auto text-ecusol-azul mb-3" />
               <h4 className="font-semibold text-lg mb-2">Chat bot inteligente</h4>

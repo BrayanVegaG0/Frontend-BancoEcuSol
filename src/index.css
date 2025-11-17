@@ -3,6 +3,5 @@
 @tailwind utilities;
 
 body {
-  /* Esto aplica el fondo gris claro a toda la página */
   @apply bg-ecusol-gris-claro text-ecusol-gris-oscuro;
 }

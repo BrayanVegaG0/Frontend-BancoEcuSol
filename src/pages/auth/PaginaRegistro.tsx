@@ -15,9 +15,7 @@ const PaginaRegistro = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    // Aquí iría la lógica de validación
     try {
-      // Simular registro. En un caso real, se pasarían todos los datos del formulario.
       await registrar("nuevoUsuario", "password123", "Nuevo Usuario");
       navigate('/app/dashboard');
     } catch (err) {
@@ -28,8 +26,10 @@ const PaginaRegistro = () => {
   return (
     <div className="flex items-center justify-center min-h-[70vh] py-12">
       <Tarjeta className="w-full max-w-2xl">
-        <LogoEcuSol className="text-4xl text-center mb-4" />
-        <h2 className="text-2xl font-bold text-center mb-2">Crear tu cuenta</h2>
+        <LogoEcuSol 
+          size={90} 
+          className="block mx-auto mb-6 border-2 border-ecusol-secundario" 
+        />        <h2 className="text-2xl font-bold text-center mb-2">Crear tu cuenta</h2>
         <p className="text-center text-gray-600 mb-8">Ingresa tus credenciales para poderte crear una Cuenta con Nosotros</p>
         
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -62,7 +62,7 @@ const PaginaRegistro = () => {
         <div className="text-center mt-6 text-sm">
           <span className="text-gray-600">¿Ya tienes una cuenta? </span>
           <Link to="/login" className="text-ecusol-azul hover:underline font-medium">
-            Login
+            Iniciar Sesión
           </Link>
         </div>
       </Tarjeta>

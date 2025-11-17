@@ -10,7 +10,6 @@ const RutaProtegida: React.FC<RutaProtegidaProps> = ({ children }) => {
   const location = useLocation();
 
   if (!isAutenticado) {
-    // Redirige al login, guardando la ubicación actual
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 

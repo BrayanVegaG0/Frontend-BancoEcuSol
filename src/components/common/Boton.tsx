@@ -22,7 +22,6 @@ export const Boton: React.FC<BotonProps> = ({
   const estilosBase = 'font-bold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50';
 
   const estilosVariante = {
-    // CAMBIO: Actualizado al nuevo color de marca de tailwind.config.js
     primario: 'bg-ecusol-primario text-white hover:bg-ecusol-primario/90', 
     secundario: 'bg-gray-200 text-ecusol-gris-oscuro hover:bg-gray-300',
     peligro: 'bg-red-600 text-white hover:bg-red-700',

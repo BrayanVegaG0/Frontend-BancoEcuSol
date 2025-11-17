@@ -6,7 +6,6 @@ export const GraficoGastos = () => {
     <Tarjeta className="w-full">
       <h3 className="text-lg font-semibold mb-4">Gráfico Gastos en el Mes</h3>
       <div className="h-64 bg-gray-100 rounded-lg flex items-center justify-center flex-col text-gray-400">
-        {/* Placeholder para el gráfico de barras */}
         <BarChart size={48} />
         <p className="mt-2">Datos del gráfico no disponibles</p>
       </div>

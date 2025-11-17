@@ -18,25 +18,21 @@ const PaginaPrincipal = () => {
 
   return (
     <>
-      {/* Sección Hero */}
       <section className="bg-white py-24">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl font-extrabold mb-4">¡Comienza Ahora!</h1>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto mb-8">
-            Forma parte del mejor Banco del Ecuador. Seguro, Rápido y tu mejor amigo.
+            Forma parte del mejor Banco del Ecuador.
+            <br />
+            Seguro, Rápido y tu mejor amigo.
           </p>
           <div className="flex justify-center gap-4">
             <Boton tamano="grande" onClick={() => navigate('/login')} icono={<UserPlus />}>
               Inicia sesión para acceder
             </Boton>
-            <Boton tamano="grande" variante="secundario" icono={<Download />}>
-              Descargar la app móvil
-            </Boton>
           </div>
         </div>
       </section>
-
-      {/* Sección Beneficios */}
       <section className="py-20 bg-ecusol-gris-claro">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-12">Beneficios a los que puedes acceder</h2>

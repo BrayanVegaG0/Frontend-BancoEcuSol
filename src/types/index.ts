@@ -7,14 +7,14 @@ export interface Usuario {
 export interface Cuenta {
   id: string;
   tipo: string;
-  numeroCorto: string; // "8415"
+  numeroCorto: string; 
   saldo: number;
 }
 
 export interface Movimiento {
   id: string;
-  fecha: string; // "25/11/2025"
+  fecha: string;
   descripcion: string;
-  monto: number; // -20.00 o 40.00
+  monto: number; 
   categoria: string;
 }

@@ -23,8 +23,6 @@ const PaginaCuentas: React.FC = () => {
           <ResumenCuenta key={cuenta.id} cuenta={cuenta} />
         ))}
       </div>
-      
-      {/* Próximamente podríamos añadir más secciones, como "Abrir nueva cuenta" */}
     </div>
   );
 };

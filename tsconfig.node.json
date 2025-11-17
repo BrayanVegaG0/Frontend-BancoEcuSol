@@ -10,14 +10,8 @@
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
-    
-    /* REQUERIDO POR LA REFERENCIA */
     "composite": true, 
-    
-    /* SOLUCIONA EL CONFLICTO DE EMIT/NOEMIT */
     "emitDeclarationOnly": true, 
-
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

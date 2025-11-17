@@ -6,11 +6,8 @@ import { Tarjeta } from '@/components/common/Tarjeta';
 import { AlertTriangle, Search } from 'lucide-react';
 
 const PaginaTransferencia: React.FC = () => {
-  // 1. Estado para guardar el nombre del destinatario validado
   const [nombreDestinatario, setNombreDestinatario] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
-
-  // 2. Función simulada para validar la cuenta
   const handleValidarCuenta = async () => {
     setLoading(true);
     // En un futuro, aquí se llamaría al BFF:
@@ -28,7 +25,6 @@ const PaginaTransferencia: React.FC = () => {
       <h1 className="text-3xl font-bold mb-8">Transferencia</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Formulario Principal */}
         <Tarjeta className="md:col-span-2">
           <form className="space-y-6">
             <Select id="cuenta_origen" label="Seleccione la cuenta que quiere usar">
@@ -41,8 +37,6 @@ const PaginaTransferencia: React.FC = () => {
               label="Especifique el banco al cual quiere realizar la transferencia"
               placeholder="Ej: Banco Pichincha"
             />
-            
-            {/* --- SECCIÓN DE VALIDACIÓN --- */}
             <div className="flex items-end gap-3">
               <Input 
                 id="cuenta_destino" 
@@ -60,8 +54,6 @@ const PaginaTransferencia: React.FC = () => {
                 {loading ? 'Validando...' : 'Validar'}
               </Boton>
             </div>
-            
-            {/* 3. Campo de solo lectura para el nombre validado */}
             {nombreDestinatario && (
               <Input 
                 id="nombre_destinatario"
@@ -71,8 +63,6 @@ const PaginaTransferencia: React.FC = () => {
                 className="bg-gray-100"
               />
             )}
-            {/* --- FIN SECCIÓN --- */}
-            
             <Input 
               id="cedula_destino" 
               label="Cédula de destinatario"
@@ -91,16 +81,11 @@ const PaginaTransferencia: React.FC = () => {
               label="Descripción"
               placeholder="Ej: Pago arriendo"
             />
-
-            {/* 4. CAMPO DE CÓDIGO ELIMINADO */}
-
             <Boton type="submit" tamano="grande" className="w-full">
               Enviar Dinero
             </Boton>
           </form>
         </Tarjeta>
-
-        {/* Panel de Seguridad */}
         <div className="space-y-6">
           <Tarjeta className="bg-blue-50 border-l-4 border-ecusol-primario">
             <div className="flex items-center gap-3 mb-3">

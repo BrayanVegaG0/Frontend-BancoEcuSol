@@ -8,15 +8,12 @@ const PaginaDashboard: React.FC = () => {
 
   return (
     <div className="space-y-8">
-      {/* Saludo principal */}
       <div>
         <h1 className="text-3xl font-bold text-ecusol-gris-oscuro">
           Buenos Días, {usuario?.nombres}
         </h1>
         <p className="text-gray-600">Es un gusto tenerte hoy aquí.</p>
       </div>
-      
-      {/* Tarjeta de bienvenida */}
       <Tarjeta>
         <h2 className="text-xl font-semibold mb-3 text-ecusol-primario">
           Bienvenido a tu Banco EcuSol

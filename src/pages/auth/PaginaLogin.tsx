@@ -28,10 +28,10 @@ const PaginaLogin = () => {
   return (
     <div className="flex items-center justify-center min-h-[70vh] py-12">
       <Tarjeta className="w-full max-w-md">
-        <LogoEcuSol className="text-4xl text-center mb-4" />
-        <h2 className="text-2xl font-bold text-center mb-2">Bienvenido a tu Banco</h2>
-        <p className="text-center text-gray-600 mb-8">Ingresa tu Usuario y Contraseña</p>
-        
+      <LogoEcuSol 
+          size={90} 
+          className="block mx-auto mb-6 border-2 border-ecusol-secundario" 
+        />        <h2 className="text-2xl font-bold text-center mb-2">Bienvenido a tu Banco</h2>        
         <form onSubmit={handleSubmit} className="space-y-6">
           <Input
             id="usuario"
@@ -60,8 +60,8 @@ const PaginaLogin = () => {
         
         <div className="text-center mt-6 text-sm text-ecusol-azul space-y-2">
           <Link to="/registro" className="block hover:underline">Regístrarse</Link>
-          <Link to="#" className="block hover:underline">¿Olvidaste tu Usuario?</Link>
-          <Link to="#" className="block hover:underline">¿Olvidaste tu Contraseña?</Link>
+          {/*<Link to="#" className="block hover:underline">¿Olvidaste tu Usuario?</Link>
+          <Link to="#" className="block hover:underline">¿Olvidaste tu Contraseña?</Link>*/}
         </div>
       </Tarjeta>
     </div>

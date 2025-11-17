@@ -1,7 +1,6 @@
 /**
- * Formatea un número como moneda USD.
- * @param monto El monto a formatear.
- * @returns String formateado (ej. $ 2,540.00)
+ * @param monto
+ * @returns 
  */
 export const formatCurrency = (monto: number): string => {
   return new Intl.NumberFormat('en-US', {

@@ -1,19 +1,21 @@
 import React from 'react';
-// Importa la imagen del logo desde la carpeta de assets
 import logoEcuSol from '@/assets/logo.jpg'; 
+
 interface LogoEcuSolProps {
   className?: string;
-  width?: number;
+  size?: number; // Cambiamos 'width' por 'size' para un círculo
 }
 
-// Este componente ahora renderiza la imagen del logo
-export const LogoEcuSol: React.FC<LogoEcuSolProps> = ({ className = '', width = 150 }) => {
+export const LogoEcuSol: React.FC<LogoEcuSolProps> = ({ className = '', size = 50 }) => {
   return (
     <img 
       src={logoEcuSol} 
       alt="Logo Banco EcuSol" 
-      className={className}
-      style={{ width: `${width}px` }} 
+      className={`rounded-full object-cover ${className}`} 
+        style={{ 
+        width: `${size}px`, 
+        height: `${size}px` 
+      }} 
     />
   );
 };

@@ -7,11 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Nueva paleta de colores basada en el logo
         'ecusol': {
-          'primario': '#002D62',    // Azul oscuro del logo
-          'secundario': '#F5A623', // Naranja del logo
-          'acento': '#00AEEF',      // Azul claro del logo
+          'primario': '#002D62',    
+          'secundario': '#F5A623', 
+          'acento': '#00AEEF',     
           'gris-oscuro': '#333333',
           'gris-claro': '#F4F7F6',
         }
