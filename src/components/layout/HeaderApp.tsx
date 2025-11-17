@@ -5,11 +5,11 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { Boton } from '../common/Boton';
 import { User, Menu, X } from 'lucide-react';
 
+// 3. ELIMINADO EL ENLACE 'Pagos' DEL ARRAY
 const enlaces = [
   { nombre: 'Principal', ruta: '/app/dashboard' },
   { nombre: 'Cuentas', ruta: '/app/cuentas' },
   { nombre: 'Transferir', ruta: '/app/transferir' },
-  { nombre: 'Pagos', ruta: '/app/pagar-servicios' },
   { nombre: 'Acerca de', ruta: '/app/acerca-de' },
   { nombre: 'Ayuda', ruta: '/app/ayuda' },
 ];
@@ -51,11 +51,10 @@ export const HeaderApp: React.FC = () => {
             Bienvenid@{usuario ? `, ${usuario.nombres.split(' ')[0]}` : ''}
           </span>
           
-          {/* Botón de Salir Corregido */}
           <Boton 
             onClick={handleLogout} 
-            variante="secundario" // Usa texto oscuro
-            className="bg-white hover:bg-gray-100" // Fondo blanco
+            variante="secundario"
+            className="bg-white hover:bg-gray-100"
             tamano="pequeno"
           >
             Salir

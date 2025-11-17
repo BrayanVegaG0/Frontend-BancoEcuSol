@@ -1,10 +1,28 @@
+import React, { useState } from 'react'; // Importamos useState
 import { Boton } from '@/components/common/Boton';
 import { Input } from '@/components/common/Input';
 import { Select } from '@/components/common/Select';
 import { Tarjeta } from '@/components/common/Tarjeta';
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle, Search } from 'lucide-react';
 
-const PaginaTransferencia = () => {
+const PaginaTransferencia: React.FC = () => {
+  // 1. Estado para guardar el nombre del destinatario validado
+  const [nombreDestinatario, setNombreDestinatario] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
+
+  // 2. Función simulada para validar la cuenta
+  const handleValidarCuenta = async () => {
+    setLoading(true);
+    // En un futuro, aquí se llamaría al BFF:
+    // const data = await bff.post('/api/validar-cuenta', { numero: numeroDeCuenta });
+    // setNombreDestinatario(data.nombreCompleto);
+    
+    // Simulación
+    await new Promise(resolve => setTimeout(resolve, 750)); 
+    setNombreDestinatario('Juan Roberto Perez Alcivar'); // Nombre de ejemplo
+    setLoading(false);
+  };
+
   return (
     <div className="max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-8">Transferencia</h1>
@@ -24,11 +42,36 @@ const PaginaTransferencia = () => {
               placeholder="Ej: Banco Pichincha"
             />
             
-            <Input 
-              id="cuenta_destino" 
-              label="Número de Cuenta de Destinatario"
-              placeholder="0123456789"
-            />
+            {/* --- SECCIÓN DE VALIDACIÓN --- */}
+            <div className="flex items-end gap-3">
+              <Input 
+                id="cuenta_destino" 
+                label="Número de Cuenta de Destinatario"
+                placeholder="0123456789"
+                className="flex-grow"
+              />
+              <Boton 
+                type="button" 
+                variante="secundario"
+                onClick={handleValidarCuenta}
+                icono={<Search size={16} />}
+                disabled={loading}
+              >
+                {loading ? 'Validando...' : 'Validar'}
+              </Boton>
+            </div>
+            
+            {/* 3. Campo de solo lectura para el nombre validado */}
+            {nombreDestinatario && (
+              <Input 
+                id="nombre_destinatario"
+                label="Destinatario"
+                value={nombreDestinatario}
+                readOnly
+                className="bg-gray-100"
+              />
+            )}
+            {/* --- FIN SECCIÓN --- */}
             
             <Input 
               id="cedula_destino" 
@@ -49,11 +92,7 @@ const PaginaTransferencia = () => {
               placeholder="Ej: Pago arriendo"
             />
 
-            <Input 
-              id="codigo_verificacion" 
-              label="Código Verificación"
-              placeholder="Ingrese el código enviado a su correo"
-            />
+            {/* 4. CAMPO DE CÓDIGO ELIMINADO */}
 
             <Boton type="submit" tamano="grande" className="w-full">
               Enviar Dinero
@@ -63,9 +102,9 @@ const PaginaTransferencia = () => {
 
         {/* Panel de Seguridad */}
         <div className="space-y-6">
-          <Tarjeta className="bg-blue-50 border-l-4 border-ecusol-azul">
+          <Tarjeta className="bg-blue-50 border-l-4 border-ecusol-primario">
             <div className="flex items-center gap-3 mb-3">
-              <AlertTriangle className="text-ecusol-azul" size={24} />
+              <AlertTriangle className="text-ecusol-primario" size={24} />
               <h4 className="font-bold text-lg">Por su seguridad</h4>
             </div>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
