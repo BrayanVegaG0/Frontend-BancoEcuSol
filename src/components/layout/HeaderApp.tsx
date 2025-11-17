@@ -27,7 +27,7 @@ export const HeaderApp: React.FC = () => {
   return (
     <header className="bg-ecusol-primario text-gray-200 w-full relative">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <LogoEcuSol width={180} />
+        <LogoEcuSol size={180} />
         
         {/* Links de Desktop (Ocultos en móvil) */}
         <div className="hidden md:flex items-center space-x-6">
